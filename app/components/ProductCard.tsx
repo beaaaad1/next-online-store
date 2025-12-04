@@ -5,7 +5,14 @@ import StarRating from "@/app/components/StarRating";
 
 const cardDiscountPercent = 6;
 
-const ProductCard = ({img, description, basePrice, discountPercent, rating}:
+const ProductCard = ({
+    img,
+    description,
+    basePrice,
+    discountPercent,
+    rating,
+    categories
+}:
  ProductCardProps) => {
 
 
@@ -18,9 +25,11 @@ const calculatePriceByCard = (price: number, discount: number): number => {
     return calculateFinalPrice(price, discount);
 }
 
-const finalPrice = calculateFinalPrice(basePrice, discountPercent);
+const isNewProbuct = categories?.includes("new")
 
-const priceByCard = calculatePriceByCard(finalPrice, cardDiscountPercent)
+const finalPrice = isNewProbuct ? basePrice : calculateFinalPrice(basePrice, discountPercent);
+
+const priceByCard = isNewProbuct ? basePrice : calculatePriceByCard(finalPrice, cardDiscountPercent)
 
 
 
@@ -30,7 +39,7 @@ const priceByCard = calculatePriceByCard(finalPrice, cardDiscountPercent)
     <div className="relative w-full h-[180px] bg-gray-50 flex items-center justify-center">
         <img
             src={img}
-            alt="Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
+            alt="Акция»"
             className="max-w-full max-h-full object-contain"
             sizes="(max-width: 768px) 160px, (max-width: 1280px) 224px, 272px)"
         />
@@ -55,14 +64,14 @@ const priceByCard = calculatePriceByCard(finalPrice, cardDiscountPercent)
         <div className="flex flex-col gap-1">
             <div className="flex items-baseline gap-1">
                 <span className="text-base font-bold text-[#ff6633]">{formatPrice(priceByCard)} ₽</span>
-                {cardDiscountPercent > 0 && (
-                   <span className="text-xs text-[#666] ml-1">по карте</span>
+                {discountPercent > 0 && (
+                   <span className="mb:text-xs text-[#666] ml-1">по карте</span>
                 )}
                 </div>
             {finalPrice !== basePrice && cardDiscountPercent > 0 && (
               <div className="flex items-baseline gap-1">
-                <span className="text-sm line-through text-[#999]">{formatPrice(finalPrice)} ₽</span>
-                <span className="text-xs text-[#999] ml-1">обычная</span>
+                <span className="mb:text-sm line-through text-[#999]">{formatPrice(finalPrice)} ₽</span>
+                <p className="mb:text-xs text-[#999] ml-1 text-right">обычная</p>
             </div>
             )}
 

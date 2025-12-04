@@ -54,6 +54,50 @@
       "rating": 3.5,
       "categories": ["new", "meat"],
       "weight": "600 г"
+    },
+    {
+      "id": 6,
+      "img": "/images/products/imgNew1.png",
+      "title": "Сыр Ламбер",
+      "description": "Сыр Ламбер Маасдам полутвердый 45%, 180г",
+      "basePrice": 134.99,
+      "discountPercent": 0,
+      "rating": 5,
+      "categories": ["dairy", "new"],
+      "weight": "180 г"
+    },
+    {
+      "id": 7,
+      "img": "/images/products/imgNew2.png",
+      "title": "Пельмени Сибирская коллекция",
+      "description": "Пельмени Сибирская коллекция, категория В, 700г",
+      "basePrice": 359.99,
+      "discountPercent": 0,
+      "rating": 5,
+      "categories": ["meat", "new"],
+      "weight": "700 г"
+    },
+    {
+      "id": 8,
+      "img": "/images/products/imgNew3.png",
+      "title": "Сырок творожный",
+      "description": "Сырок творожный Родимая Сторонка 8% с изюмом 100г, категория В, 700г",
+      "basePrice": 64.99,
+      "discountPercent": 0,
+      "rating": 5,
+      "categories": ["dairy", "new"],
+      "weight": "100 г"
+    },
+    {
+      "id": 9,
+      "img": "/images/products/imgNew.png",
+      "title": "Печенье Юбилейное",
+      "description": "Печенье витаминизированное Юбилейное традиционное 134 г - отзывы покупателей на маркетплейсе Мегамаркет",
+      "basePrice": 55,
+      "discountPercent": 0,
+      "rating": 5,
+      "categories": ["bread", "new"],
+      "weight": "134 г"
     }
   ]
 }
