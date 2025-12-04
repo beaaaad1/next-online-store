@@ -4,6 +4,7 @@ import Actions from "@/app/components/Actions";
 import NewProducts from "@/app/components/NewProducts";
 import Purchases from "@/app/components/Purchases";
 import SpecialOffers from "@/app/components/SpecialOffers";
+import Articles from "@/app/components/Articles";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
                 <NewProducts/>
                 <Purchases/>
                 <SpecialOffers/>
+                <Articles/>
           </div>
       </main>
   );
