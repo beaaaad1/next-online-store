@@ -9,7 +9,7 @@ const ProductCard = ({
     img,
     description,
     basePrice,
-    discountPercent,
+    discountPercent = 0,
     rating,
     categories
 }:
@@ -88,7 +88,7 @@ const priceByCard = isNewProbuct ? basePrice : calculatePriceByCard(finalPrice, 
             <span className="text-sm text-[#666]">(4.8)</span>
         </div>
 
-        <button className="border border-[#70c05b] bg-[#70c05b] hover:bg-[#5caa46] text-white w-full h-10 rounded-lg text-base font-medium transition-colors duration-200 cursor-pointer active:scale-[0.98] flex items-center justify-center">
+        <button className="border border-[#70c05b] bg-transparent text-[#70c05b] hover:bg-[#f63] hover:text-white hover:border-[#f63] w-full h-10 rounded-lg text-base font-medium transition-colors duration-200 cursor-pointer active:scale-[0.98] flex items-center justify-center">
             В корзину
         </button>
     </div>
