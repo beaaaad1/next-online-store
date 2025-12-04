@@ -1,6 +1,7 @@
 import Image from "next/image";
 import {ProductCardProps} from "@/app/types/product";
 import {formatPrice} from "@/app/utils/formatPrice";
+import StarRating from "@/app/components/StarRating";
 
 const cardDiscountPercent = 6;
 
@@ -31,6 +32,7 @@ const priceByCard = calculatePriceByCard(finalPrice, cardDiscountPercent)
             src={img}
             alt="Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
             className="max-w-full max-h-full object-contain"
+            sizes="(max-width: 768px) 160px, (max-width: 1280px) 224px, 272px)"
         />
 
         <button className="w-8 h-8 p-1.5 bg-white/90 hover:bg-[#fcd5ba] absolute top-2 right-2 rounded-full cursor-pointer duration-300 flex items-center justify-center shadow-sm">
@@ -72,7 +74,7 @@ const priceByCard = calculatePriceByCard(finalPrice, cardDiscountPercent)
 
         <div className="flex items-center gap-2">
             <div className="flex text-amber-500 text-lg">
-                {rating > 0 && <p>Рейтинг {rating}</p>}
+                {rating > 0 && <StarRating rating={rating}/>}
             </div>
             <span className="text-sm text-[#666]">(4.8)</span>
         </div>
