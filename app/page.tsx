@@ -1,4 +1,4 @@
-import Slider from "@/app/components/Slider/Slider";
+import Slider from "@/app/components/slider/Slider";
 import ProductCard from "@/app/components/ProductCard";
 import Actions from "@/app/components/Actions";
 import NewProducts from "@/app/components/NewProducts";
