@@ -31,7 +31,7 @@ const finalPrice = isNewProbuct ? basePrice : calculateFinalPrice(basePrice, dis
 
 const priceByCard = isNewProbuct ? basePrice : calculatePriceByCard(finalPrice, cardDiscountPercent)
 
-
+const ratingValue = rating?.rate || 5;
 
     return (
 
@@ -83,7 +83,7 @@ const priceByCard = isNewProbuct ? basePrice : calculatePriceByCard(finalPrice, 
 
         <div className="flex items-center gap-2">
             <div className="flex text-amber-500 text-lg">
-                {rating > 0 && <StarRating rating={rating}/>}
+                {ratingValue > 0 && <StarRating rating={ratingValue}/>}
             </div>
             <span className="text-sm text-[#666]"></span>
         </div>

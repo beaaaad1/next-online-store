@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b24b4eec-3bab-4659-87b1-480caad6aec8" name="Changes" comment="подключение бд">
+    <list default="true" id="b24b4eec-3bab-4659-87b1-480caad6aec8" name="Changes" comment="получение данных из бд">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Actions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Actions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Articles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Articles.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/NewProducts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/NewProducts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Purchases.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Purchases.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Slider/SlideOne.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/slider/SlideOne.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Slider/SlideTwo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/slider/SlideTwo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Slider/Slider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/slider/Slider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/types/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/types/product.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/users/purchases/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/users/purchases/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/20251205013434-products.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/productsDatabase.json" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/productsDatabase.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +118,8 @@
       <workItem from="1764840481953" duration="2366000" />
       <workItem from="1764845111713" duration="35989000" />
       <workItem from="1764931153323" duration="21990000" />
-      <workItem from="1764963076225" duration="309000" />
+      <workItem from="1764963076225" duration="591000" />
+      <workItem from="1764967862744" duration="5906000" />
     </task>
     <task id="LOCAL-00001" summary="Слайдер">
       <option name="closed" value="true" />
@@ -191,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764899888687</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="получение данных из бд">
+      <option name="closed" value="true" />
+      <created>1764963531696</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1764963531696</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +218,7 @@
     <MESSAGE value="Специальные предложения" />
     <MESSAGE value="футер" />
     <MESSAGE value="подключение бд" />
-    <option name="LAST_COMMIT_MESSAGE" value="подключение бд" />
+    <MESSAGE value="получение данных из бд" />
+    <option name="LAST_COMMIT_MESSAGE" value="получение данных из бд" />
   </component>
 </project>

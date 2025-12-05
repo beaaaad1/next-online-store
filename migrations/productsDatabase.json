@@ -7,9 +7,10 @@
       "basePrice": 967.0,
       "discountPercent": 20,
       "rating": 4.2,
-      "categories": ["actions", "food"],
+      "categories": ["actions", "circuit"],
       "weight": ""
     },
+
     {
       "id": 2,
       "img": "/images/products/img2.jpg",
@@ -18,7 +19,7 @@
       "basePrice": 104.0,
       "discountPercent": 15,
       "rating": 4.5,
-      "categories": ["actions", "dairy"],
+      "categories": ["actions", "circuit"],
       "volume": ""
     },
     {
@@ -29,7 +30,7 @@
       "basePrice": 630.0,
       "discountPercent": 25,
       "rating": 4.8,
-      "categories": ["actions", "meat"],
+      "categories": ["actions", "socket"],
       "weight": "500 г"
     },
     {
@@ -40,7 +41,7 @@
       "basePrice": 400.0,
       "discountPercent": 10,
       "rating": 4.8,
-      "categories": ["actions", "meat"],
+      "categories": ["actions", "shield"],
       "weight": "400 г"
     },
     {
@@ -51,7 +52,7 @@
       "basePrice": 43.0,
       "discountPercent": 0,
       "rating": 3.5,
-      "categories": ["new", "meat"],
+      "categories": ["new", "cable"],
       "weight": "600 г"
     },
     {
@@ -62,7 +63,7 @@
       "basePrice": 1685.99,
       "discountPercent": 0,
       "rating": 5,
-      "categories": ["dairy", "new"],
+      "categories": ["switch", "new"],
       "weight": "180 г"
     },
     {
@@ -73,7 +74,7 @@
       "basePrice": 1232.99,
       "discountPercent": 0,
       "rating": 5,
-      "categories": ["meat", "new"],
+      "categories": ["switch", "new"],
       "weight": "700 г"
     },
     {
@@ -84,7 +85,7 @@
       "basePrice": 2145.99,
       "discountPercent": 0,
       "rating": 5,
-      "categories": ["dairy", "new"],
+      "categories": ["disconnector", "new"],
       "weight": "100 г"
     },
     {
@@ -95,7 +96,95 @@
       "basePrice": 55,
       "discountPercent": 0,
       "rating": 5,
-      "categories": ["bread", "new"],
+      "categories": ["disconnector", "new"],
+      "weight": "134 г"
+    },
+    {
+      "id": 10,
+      "img": "/images/products/img10.jpeg",
+      "title": "Кабель ВВГ 3х2.5 ТУ 77410/002762",
+      "description": "Кабель ВВГ 3х2.5 ТУ 77410/002762",
+      "basePrice": 98,
+      "discountPercent": 0,
+      "rating": 5,
+      "categories": ["cable", "new"],
+      "weight": "134 г"
+    },
+  {
+      "id": 11,
+      "img": "/images/products/img11.jpeg",
+      "title": "Кабель ВВГ 3х2.5",
+      "description": "Кабель ВВГ 3х2.5 50 м ГОСТ нг LS 18041/002758 ",
+      "basePrice": 7810,
+      "discountPercent": 0,
+      "rating": 5,
+      "categories": ["cable", "new"],
+      "weight": "134 г"
+    },
+    {
+      "id": 12,
+      "img": "/images/products/img12.jpeg",
+      "title": "Кабель ВВГ 2х1.5",
+      "description": "Кабель ВВГ 2х1.5 10 м ГОСТ нг LS 002734",
+      "basePrice": 688,
+      "discountPercent": 0,
+      "rating": 5,
+      "categories": ["cable", "new"],
+      "weight": "134 г"
+    },
+    {
+      "id": 13,
+      "img": "/images/products/img13.png",
+      "title": "Кабель ВВГ 2х1.5",
+      "description": "Кабель ВВГ 2х1.5 50 м ГОСТ нг LS 002736",
+      "basePrice": 3650,
+      "discountPercent": 0,
+      "rating": 5,
+      "categories": ["cable", "new"],
+      "weight": "134 г"
+    },
+    {
+      "id": 14,
+      "img": "/images/products/img14.png",
+      "title": "Стабилизатор напряжения РЕСАНТА",
+      "description": "Стабилизатор напряжения РЕСАНТА ACH-2000/1-Ц ",
+      "basePrice": 5250,
+      "discountPercent": 0,
+      "rating": 5,
+      "categories": ["stabilizer", "new"],
+      "weight": "134 г"
+    },
+    {
+      "id": 15,
+      "img": "/images/products/img15.png",
+      "title": "Стабилизатор напряжения РЕСАНТА",
+      "description": "Стабилизатор напряжения РЕСАНТА АСН-10 000 Н/1-Ц",
+      "basePrice": 15990,
+      "discountPercent": 0,
+      "rating": 5,
+      "categories": ["stabilizer", "new"],
+      "weight": "134 г"
+    },
+    {
+      "id": 16,
+      "img": "/images/products/img16.png",
+      "title": "Электросчетчик СЕ 101 S6",
+      "description": "Электросчетчик СЕ 101 S6 (220В 5-60А 1фазный 1класс точности)",
+      "basePrice": 2890,
+      "discountPercent": 0,
+      "rating": 5,
+      "categories": ["meter", "new"],
+      "weight": "134 г"
+    },
+    {
+      "id": 17,
+      "img": "/images/products/img17.png",
+      "title": "Шина нулевая NAVIGATOR",
+      "description": "Шина нулевая NAVIGATOR на DIN-изоляторе 8D/B ",
+      "basePrice": 190,
+      "discountPercent": 0,
+      "rating": 5,
+      "categories": ["tire", "new"],
       "weight": "134 г"
     }
-  ]
+]
