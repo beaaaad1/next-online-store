@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import articlesDatabase from "@/app/data/articlesDatabase.json";
+import articlesDatabase from "@/migrations/articlesDatabase.json";
 import Link from "next/link";
 
 const Articles = () => {

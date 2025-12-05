@@ -85,7 +85,7 @@ const priceByCard = isNewProbuct ? basePrice : calculatePriceByCard(finalPrice, 
             <div className="flex text-amber-500 text-lg">
                 {rating > 0 && <StarRating rating={rating}/>}
             </div>
-            <span className="text-sm text-[#666]">(4.8)</span>
+            <span className="text-sm text-[#666]"></span>
         </div>
 
         <button className="border border-[#70c05b] bg-transparent text-[#70c05b] hover:bg-[#f63] hover:text-white hover:border-[#f63] w-full h-10 rounded-lg text-base font-medium transition-colors duration-200 cursor-pointer active:scale-[0.98] flex items-center justify-center">

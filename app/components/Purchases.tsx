@@ -1,6 +1,6 @@
 
 import ProductCard from "./ProductCard";
-import database from "@/app/data/database.json";
+import database from "@/migrations/productsDatabase.json";
 
 const Purchases = () => {
 

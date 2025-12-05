@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b24b4eec-3bab-4659-87b1-480caad6aec8" name="Changes" comment="Специальные предложения">
+    <list default="true" id="b24b4eec-3bab-4659-87b1-480caad6aec8" name="Changes" comment="футер">
+      <change afterPath="$PROJECT_DIR$/migrations/productsDatabase.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Actions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Actions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Articles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Articles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/NewProducts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/NewProducts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ProductCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Purchases.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Purchases.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/data/articlesDatabase.json" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/articlesDatabase.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/data/database.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +75,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Emil\newWEB\next-online-store\migrations" />
       <recent name="C:\Users\Emil\newWEB\next-online-store\app\components\Slider" />
       <recent name="C:\Users\Emil\newWEB\next-online-store\app\components\header" />
     </key>
@@ -111,7 +121,7 @@
       <workItem from="1764773959436" duration="10815000" />
       <workItem from="1764840338771" duration="112000" />
       <workItem from="1764840481953" duration="2366000" />
-      <workItem from="1764845111713" duration="22801000" />
+      <workItem from="1764845111713" duration="35585000" />
     </task>
     <task id="LOCAL-00001" summary="Слайдер">
       <option name="closed" value="true" />
@@ -161,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764868626339</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="футер">
+      <option name="closed" value="true" />
+      <created>1764881683628</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1764881683628</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +202,7 @@
     <MESSAGE value="рейтинг" />
     <MESSAGE value="товары-новинки" />
     <MESSAGE value="Специальные предложения" />
-    <option name="LAST_COMMIT_MESSAGE" value="Специальные предложения" />
+    <MESSAGE value="футер" />
+    <option name="LAST_COMMIT_MESSAGE" value="футер" />
   </component>
 </project>

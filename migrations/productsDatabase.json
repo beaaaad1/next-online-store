@@ -1,0 +1,101 @@
+[
+    {
+      "id": 1,
+      "img": "/images/products/img1.jpeg",
+      "title": "Автоматический выключатель",
+      "description": "Автоматический выключатель GENERICA C40",
+      "basePrice": 967.0,
+      "discountPercent": 20,
+      "rating": 4.2,
+      "categories": ["actions", "food"],
+      "weight": ""
+    },
+    {
+      "id": 2,
+      "img": "/images/products/img2.jpg",
+      "title": "Кабель ВВГ-П",
+      "description": "Кабель ВВГ-П нг(А)-LS 3x25 Энергомир",
+      "basePrice": 104.0,
+      "discountPercent": 15,
+      "rating": 4.5,
+      "categories": ["actions", "dairy"],
+      "volume": ""
+    },
+    {
+      "id": 3,
+      "img": "/images/products/img3.jpeg",
+      "title": "Розетка двойная",
+      "description": "Розетка двойная встраиваемая SCHNEIDER ELECTRIC Glossa с заземлением",
+      "basePrice": 630.0,
+      "discountPercent": 25,
+      "rating": 4.8,
+      "categories": ["actions", "meat"],
+      "weight": "500 г"
+    },
+    {
+      "id": 4,
+      "img": "/images/products/img4.png",
+      "title": "Корпус пластиковый КМПн",
+      "description": "Корпус пластиковый КМПн 2/6 IP30 белый KREPTA 3 IEK",
+      "basePrice": 400.0,
+      "discountPercent": 10,
+      "rating": 4.8,
+      "categories": ["actions", "meat"],
+      "weight": "400 г"
+    },
+    {
+      "id": 5,
+      "img": "/images/products/img5.png",
+      "title": "Кабель RG-6",
+      "description": "Кабель RG-6",
+      "basePrice": 43.0,
+      "discountPercent": 0,
+      "rating": 3.5,
+      "categories": ["new", "meat"],
+      "weight": "600 г"
+    },
+    {
+      "id": 6,
+      "img": "/images/products/imgNew1.png",
+      "title": "Рубильник",
+      "description": "Рубильник на Din-рейку ABB (OT 40F3 / 40A)",
+      "basePrice": 1685.99,
+      "discountPercent": 0,
+      "rating": 5,
+      "categories": ["dairy", "new"],
+      "weight": "180 г"
+    },
+    {
+      "id": 7,
+      "img": "/images/products/imgNew2.png",
+      "title": "Рубильник",
+      "description": "Рубильник ABB SHD203 3P 32A",
+      "basePrice": 1232.99,
+      "discountPercent": 0,
+      "rating": 5,
+      "categories": ["meat", "new"],
+      "weight": "700 г"
+    },
+    {
+      "id": 8,
+      "img": "/images/products/imgNew3.png",
+      "title": "Выключатель-разъединитель",
+      "description": "Выключатель-разъединитель трехпозиционный 3п ВРТ-63 25А IEK",
+      "basePrice": 2145.99,
+      "discountPercent": 0,
+      "rating": 5,
+      "categories": ["dairy", "new"],
+      "weight": "100 г"
+    },
+    {
+      "id": 9,
+      "img": "/images/products/imgNew4.png",
+      "title": "Выключатель-разъединитель",
+      "description": "Выключатель-разъединитель модульный ВРМ-3 3Р 63А IEK",
+      "basePrice": 55,
+      "discountPercent": 0,
+      "rating": 5,
+      "categories": ["bread", "new"],
+      "weight": "134 г"
+    }
+  ]
