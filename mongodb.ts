@@ -1,7 +1,5 @@
-// lib/mongodb.ts
 import mongoose, { Mongoose } from "mongoose";
 
-// Собираем полную строку подключения
 const MONGO_URI = `${process.env.NEXT_ONLINE_STORE_DB_URL!}${process.env.NEXT_ONLINE_STORE_DB_NAME!}`;
 
 if (!MONGO_URI) {
@@ -11,11 +9,9 @@ if (!MONGO_URI) {
 }
 
 
-// Используем 'global' в Node.js среде Next.js (Серверный код)
 let cached = global.mongoose;
 
 if (!cached) {
-    // Инициализируем кэш, используя объявленный глобальный тип
     cached = global.mongoose = { conn: null, promise: null };
 }
 
