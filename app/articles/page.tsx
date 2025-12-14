@@ -22,7 +22,7 @@ const AllArticles = async () => {
 
   return (
     <section>
-      <div className="px-[max(12px,calc((100%-1208px)/2))] flex flex-col mt-20 text-[#414141] ">
+      <div className="px-[max(12px,calc((100%-1208px)/2))] flex flex-col mt-20 text-[#414141] mb-20 ">
         <div className="mb-4 md:mb-8 xl:mb-10 flex flex-row justify-between">
           <h2 className="text-2xl xl:text-4xl text-left font-bold">Статьи</h2>
           <ViewAllButton btnText="На главную" href="/"/>

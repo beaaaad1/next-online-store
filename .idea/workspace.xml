@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b24b4eec-3bab-4659-87b1-480caad6aec8" name="Changes" comment="получение данных из бд">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b24b4eec-3bab-4659-87b1-480caad6aec8" name="Changes" comment="создание новых страниц">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/users/purchases/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/users/purchases/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/20251205013434-products.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/productsDatabase.json" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/productsDatabase.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/articles/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/articles/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +33,7 @@
     <setting file="file://$PROJECT_DIR$/app/components/header/LogoBlock.tsx" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -68,11 +66,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Emil\newWEB\next-online-store\app\(articles)" />
+      <recent name="C:\Users\Emil\newWEB\next-online-store\app\(user)" />
+      <recent name="C:\Users\Emil\newWEB\next-online-store\app\(products)" />
       <recent name="C:\Users\Emil\newWEB\next-online-store" />
       <recent name="C:\Users\Emil\newWEB\next-online-store\app\api\articles" />
-      <recent name="C:\Users\Emil\newWEB\next-online-store\migrations" />
-      <recent name="C:\Users\Emil\newWEB\next-online-store\app\components\Slider" />
-      <recent name="C:\Users\Emil\newWEB\next-online-store\app\components\header" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -119,7 +117,14 @@
       <workItem from="1764845111713" duration="35989000" />
       <workItem from="1764931153323" duration="21990000" />
       <workItem from="1764963076225" duration="591000" />
-      <workItem from="1764967862744" duration="5906000" />
+      <workItem from="1764967862744" duration="6515000" />
+      <workItem from="1765011710765" duration="1072000" />
+      <workItem from="1765170694390" duration="2179000" />
+      <workItem from="1765284085923" duration="1292000" />
+      <workItem from="1765476615326" duration="13068000" />
+      <workItem from="1765496908781" duration="484000" />
+      <workItem from="1765497418470" duration="47000" />
+      <workItem from="1765733675979" duration="3183000" />
     </task>
     <task id="LOCAL-00001" summary="Слайдер">
       <option name="closed" value="true" />
@@ -193,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764963531696</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="создание новых страниц">
+      <option name="closed" value="true" />
+      <created>1764974557765</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1764974557765</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +232,7 @@
     <MESSAGE value="футер" />
     <MESSAGE value="подключение бд" />
     <MESSAGE value="получение данных из бд" />
-    <option name="LAST_COMMIT_MESSAGE" value="получение данных из бд" />
+    <MESSAGE value="создание новых страниц" />
+    <option name="LAST_COMMIT_MESSAGE" value="создание новых страниц" />
   </component>
 </project>
