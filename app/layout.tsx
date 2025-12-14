@@ -3,6 +3,8 @@ import { Rubik } from "next/font/google";
 import "./globals.css";
 import Footer from "@/app/components/Footer";
 import Header from "./components/header/Header";
+import { SessionProvider } from 'next-auth/react';
+import AuthProvider from "@/app/components/AuthProvider";
 
 const rubik = Rubik({
 	variable: '--font-sans',
@@ -24,10 +26,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${rubik.variable} font-sans`}>
-        <Header/>
-        {children}
-        <Footer/>
+        <AuthProvider>
+          <Header/>
+            <main>
+                {children} {/* Содержимое страницы */}
+            </main>
+            <Footer/>
+        </AuthProvider>
       </body>
     </html>
   );
 }
+

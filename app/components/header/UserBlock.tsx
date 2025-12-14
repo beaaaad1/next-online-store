@@ -1,5 +1,5 @@
 import TopMenu from "@/app/components/header/TopMenu";
-import Profile from "@/app/components/header/Profile";
+import Profile from "@/app/components/header/ProfileDropdown";
 const UserBlock = () => {
     return (
         <nav aria-label="Основное меню">

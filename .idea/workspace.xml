@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b24b4eec-3bab-4659-87b1-480caad6aec8" name="Changes" comment="создание новых страниц">
+    <list default="true" id="b24b4eec-3bab-4659-87b1-480caad6aec8" name="Changes" comment="локальная бд">
+      <change afterPath="$PROJECT_DIR$/app/components/header/ProfileDropdown.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/articles/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/articles/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/header/Profile.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/header/UserBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/header/UserBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,11 +71,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Emil\newWEB\next-online-store\app\auth" />
+      <recent name="C:\Users\Emil\newWEB\next-online-store\app\api\auth\[...nextauth]" />
       <recent name="C:\Users\Emil\newWEB\next-online-store\app\(articles)" />
       <recent name="C:\Users\Emil\newWEB\next-online-store\app\(user)" />
       <recent name="C:\Users\Emil\newWEB\next-online-store\app\(products)" />
-      <recent name="C:\Users\Emil\newWEB\next-online-store" />
-      <recent name="C:\Users\Emil\newWEB\next-online-store\app\api\articles" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -124,7 +129,7 @@
       <workItem from="1765476615326" duration="13068000" />
       <workItem from="1765496908781" duration="484000" />
       <workItem from="1765497418470" duration="47000" />
-      <workItem from="1765733675979" duration="3183000" />
+      <workItem from="1765733675979" duration="14766000" />
     </task>
     <task id="LOCAL-00001" summary="Слайдер">
       <option name="closed" value="true" />
@@ -206,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764974557765</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="локальная бд">
+      <option name="closed" value="true" />
+      <created>1765736999689</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1765736999690</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +246,7 @@
     <MESSAGE value="подключение бд" />
     <MESSAGE value="получение данных из бд" />
     <MESSAGE value="создание новых страниц" />
-    <option name="LAST_COMMIT_MESSAGE" value="создание новых страниц" />
+    <MESSAGE value="локальная бд" />
+    <option name="LAST_COMMIT_MESSAGE" value="локальная бд" />
   </component>
 </project>
