@@ -1,3 +1,4 @@
+// app/api/register/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/mongodb";
 import User from "@/app/models/User";
@@ -9,6 +10,7 @@ export async function POST(req: NextRequest) {
 
         const { name, email, password } = await req.json();
 
+        // 1. Проверка существования пользователя
         const userExists = await User.findOne({ email });
         if (userExists) {
             return NextResponse.json(
@@ -17,15 +19,18 @@ export async function POST(req: NextRequest) {
             );
         }
 
+        // 2. Хеширование пароля
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
+        // 3. Создание пользователя
         const newUser = await User.create({
             name,
             email,
             password: hashedPassword,
         });
 
+        // Не возвращаем пароль
         const userObject = newUser.toObject();
         delete userObject.password;
 

@@ -1,3 +1,4 @@
+// app/auth/register/page.tsx
 "use client";
 
 import { useState } from 'react';
@@ -28,6 +29,7 @@ export default function RegisterPage() {
             const data = await response.json();
 
             if (response.ok) {
+                // Успешная регистрация, перенаправляем на страницу входа
                 alert('Регистрация успешна! Теперь вы можете войти.');
                 router.push('/auth/login');
             } else {

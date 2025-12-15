@@ -1,9 +1,10 @@
+// app/orders/page.tsx
 "use client";
 
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { IOrder } from "@/app/models/Order";
+import { IOrder } from "@/app/models/Order"; // Импортируем интерфейс для типизации
 
 export default function OrdersPage() {
     const { data: session, status } = useSession();
@@ -12,9 +13,10 @@ export default function OrdersPage() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
+    // Загрузка заказов
     useEffect(() => {
         if (status === 'unauthenticated') {
-
+            // Перенаправляем, если пользователь не авторизован (Middleware должен сработать раньше)
             router.replace('/auth/login');
             return;
         }
@@ -26,11 +28,13 @@ export default function OrdersPage() {
 
     const fetchOrders = async () => {
         try {
-
-        } catch (err) {
+            // ... (код запроса)
+        } catch (err) { // Тип err теперь неявно unknown (или явно: catch (err: unknown))
+            // Проверяем, является ли err объектом Error, чтобы получить доступ к .message
             if (err instanceof Error) {
                 setError(err.message);
             } else {
+                // Если это не стандартная ошибка, используем обобщенное сообщение
                 setError('Произошла неизвестная ошибка при загрузке заказов.');
             }
         } finally {
@@ -89,6 +93,7 @@ export default function OrdersPage() {
                                 ))}
                             </ul>
 
+                            {/* Итог */}
                             <div className="mt-4 pt-4 border-t border-dashed flex justify-between items-center">
                                 <p className="text-lg font-bold">Итого:</p>
                                 <p className="text-2xl font-bold text-blue-600">{order.totalAmount.toFixed(2)} ₽</p>

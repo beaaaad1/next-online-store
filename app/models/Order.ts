@@ -1,16 +1,20 @@
+// models/Order.ts
 import mongoose, { Schema, Document, Types } from "mongoose";
 
+// Интерфейс для одного товара внутри заказа (копия данных товара на момент покупки)
 interface OrderItem {
     productId: Types.ObjectId;
     name: string;
     price: number;
     quantity: number;
+    // Можно добавить: imageUrl, slug и т.д.
 }
 
+// Интерфейс для документа заказа
 export interface IOrder extends Document {
-    userId: Types.ObjectId;
-    items: OrderItem[];
-    totalAmount: number;
+    userId: Types.ObjectId; // Ссылка на пользователя
+    items: OrderItem[];     // Список товаров в заказе
+    totalAmount: number;    // Общая стоимость заказа
     status: 'pending' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
     shippingAddress: string;
 }
@@ -26,10 +30,10 @@ const OrderItemSchema = new Schema<OrderItem>({
 const OrderSchema = new Schema<IOrder>({
     userId: {
         type: Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'User', // Ссылка на модель User
         required: true,
     },
-    items: [OrderItemSchema],
+    items: [OrderItemSchema], // Массив купленных товаров
     totalAmount: {
         type: Number,
         required: true,
@@ -41,7 +45,7 @@ const OrderSchema = new Schema<IOrder>({
     },
     shippingAddress: {
         type: String,
-        required: false,
+        required: false, // Временно опционально
     }
 }, { timestamps: true });
 

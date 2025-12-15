@@ -1,3 +1,4 @@
+// app/auth/login/page.tsx
 "use client";
 
 import { useState } from 'react';
@@ -19,8 +20,9 @@ export default function LoginPage() {
         setError('');
         setLoading(true);
 
+        // Вызываем signIn с CredentialsProvider
         const result = await signIn('credentials', {
-            redirect: false,
+            redirect: false, // Отключаем встроенное перенаправление NextAuth
             email: formData.email,
             password: formData.password,
         });
@@ -28,10 +30,10 @@ export default function LoginPage() {
         setLoading(false);
 
         if (result?.error) {
-
+            // Ошибка, которую мы выбросили в authorize callback (Неверный email или пароль)
             setError(result.error);
         } else if (result?.ok) {
-
+            // Успешный вход, перенаправляем на главную или в личный кабинет
             router.push('/');
         }
     };

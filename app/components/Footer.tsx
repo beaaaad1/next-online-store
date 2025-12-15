@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#125DF2]  mb-14 md:mb-0 px-[max(12px,calc((100%-1208px)/2))] w-full">
       <div className="px-7 py-10 grid-container gap-6 text-[#fff] md:gap-x-10 items-center pb-40">
-
+        {/* Логотип со ссылкой на главную */}
         <div className="logo">
 
   <Link href="/" className="block">
@@ -20,7 +20,7 @@ const Footer = () => {
 
         </div>
 
-
+        {/* Социальные сети с кликабельными иконками */}
         <div className="social flex flex-row gap-x-2 md:flex-col xl:flex-row gap-y-3 justify-between">
           <div className="flex gap-x-2 items-start">
             <a href="https://vk.com/rosseti" target="_blank" rel="noopener noreferrer">
@@ -73,6 +73,7 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Телефон с кликом */}
         <div className="phone">
           <a
             href="tel:+78007773333"
@@ -91,6 +92,7 @@ const Footer = () => {
           </a>
         </div>
 
+        {/* Навигация с кликабельными пунктами */}
         <nav className="nav">
           <ul className="flex flex-wrap gap-x-8 gap-4 xl:gap-y-2 md:gap-x-10">
             <li className="hover:text-black cursor-pointer">
@@ -112,6 +114,7 @@ const Footer = () => {
         </nav>
 
 
+        {/* Дизайнер (без изменений) */}
 
       </div>
 

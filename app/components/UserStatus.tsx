@@ -1,3 +1,4 @@
+// components/UserStatus.tsx
 "use client";
 
 import { useSession, signOut } from "next-auth/react";
@@ -10,6 +11,7 @@ export default function UserStatus() {
     }
 
     if (session) {
+        // Пользователь авторизован
         return (
             <div className="flex items-center space-x-4">
                 <span className="text-sm">Привет, {session.user?.name || session.user?.email}!</span>
@@ -23,6 +25,7 @@ export default function UserStatus() {
         );
     }
 
+    // Пользователь не авторизован
     return (
         <div className="flex space-x-2">
             <a href="/auth/login" className="text-blue-500 hover:underline">Вход</a>
