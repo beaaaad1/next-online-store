@@ -29,7 +29,7 @@ export default function RootLayout({
         <AuthProvider>
           <Header/>
             <main>
-                {children} {/* Содержимое страницы */}
+                {children}
             </main>
             <Footer/>
         </AuthProvider>

@@ -5,14 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b24b4eec-3bab-4659-87b1-480caad6aec8" name="Changes" comment="локальная бд">
-      <change afterPath="$PROJECT_DIR$/app/components/header/ProfileDropdown.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/header/Profile.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/header/UserBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/header/UserBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/register/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/register/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Articles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Articles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/ViewAllButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ViewAllButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/header/SearchBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/header/SearchBlock.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/User.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/types/articles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/types/articles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/types/next-auth.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/types/next-auth.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/global.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/global.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodb.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mongodb.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,11 +78,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Emil\newWEB\next-online-store\app\articles" />
+      <recent name="C:\Users\Emil\newWEB\next-online-store\app\articles\[slug]" />
       <recent name="C:\Users\Emil\newWEB\next-online-store\app\auth" />
       <recent name="C:\Users\Emil\newWEB\next-online-store\app\api\auth\[...nextauth]" />
       <recent name="C:\Users\Emil\newWEB\next-online-store\app\(articles)" />
-      <recent name="C:\Users\Emil\newWEB\next-online-store\app\(user)" />
-      <recent name="C:\Users\Emil\newWEB\next-online-store\app\(products)" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -130,6 +137,10 @@
       <workItem from="1765496908781" duration="484000" />
       <workItem from="1765497418470" duration="47000" />
       <workItem from="1765733675979" duration="14766000" />
+      <workItem from="1765765989470" duration="205000" />
+      <workItem from="1765774983632" duration="5182000" />
+      <workItem from="1765824692461" duration="8852000" />
+      <workItem from="1765901426198" duration="10315000" />
     </task>
     <task id="LOCAL-00001" summary="Слайдер">
       <option name="closed" value="true" />

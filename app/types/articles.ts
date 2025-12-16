@@ -4,4 +4,6 @@ export interface Article {
   title: string;
   text: string;
   createdAt: string;
+  slug: string;
+    content: string;
 }

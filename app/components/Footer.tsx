@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import ButtonFooter from "@/app/components/ButtonFooter";
 
 const Footer = () => {
   return (
     <footer className="bg-[#125DF2]  mb-14 md:mb-0 px-[max(12px,calc((100%-1208px)/2))] w-full">
       <div className="px-7 py-10 grid-container gap-6 text-[#fff] md:gap-x-10 items-center pb-40">
-        {/* Логотип со ссылкой на главную */}
+
         <div className="logo">
 
   <Link href="/" className="block">
@@ -96,16 +97,16 @@ const Footer = () => {
         <nav className="nav">
           <ul className="flex flex-wrap gap-x-8 gap-4 xl:gap-y-2 md:gap-x-10">
             <li className="hover:text-black cursor-pointer">
-              <Link href="#">О компании</Link>
+              <ButtonFooter btnText="О компании" href="about"/>
             </li>
             <li className="hover:text-black cursor-pointer">
-              <Link href="#">Контакты</Link>
+              <ButtonFooter btnText="Контакты" href="contacts"/>
             </li>
             <li className="hover:text-black cursor-pointer">
-              <Link href="#">Вакансии</Link>
+              <ButtonFooter btnText="Вакансии" href="vacancies"/>
             </li>
             <li className="hover:text-black cursor-pointer">
-              <Link href="#">Статьи</Link>
+              <ButtonFooter btnText="Статьи" href="articles"/>
             </li>
             <li className="hover:text-black cursor-pointer">
               Политика обработки персональных данных
@@ -114,7 +115,6 @@ const Footer = () => {
         </nav>
 
 
-        {/* Дизайнер (без изменений) */}
 
       </div>
 

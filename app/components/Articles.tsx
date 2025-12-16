@@ -1,4 +1,6 @@
+import articlesDatabase from "@/migrations/articlesDatabase.json"
 import Image from "next/image";
+import Link from "next/link";
 import {Article} from "@/app/types/articles";
 import ViewAllButton from "@/app/components/ViewAllButton";
 
@@ -53,9 +55,18 @@ const Articles = async () => {
                   <p className="text-[#414141] line-clamp-3 text-xs xl:text-base">
                     {article.text}
                   </p>
-                  <button className="rounded mt-auto w-37.5 h-10 bg-[#E5FFDE] text-base text-[#70C05B] hover:bg-(--color-primary) hover:shadow-(--shadow-button-default) hover:text-white active:shadow-(--shadow-button-active) duration-300 cursor-pointer">
+
+
+                  <Link
+                    href={`/articles/${article.slug}`}
+
+                    className="rounded mt-auto w-37.5 h-10 flex items-center justify-center
+                               bg-[#E5FFDE] text-base text-[#70C05B]
+                               hover:bg-(--color-primary) hover:shadow-(--shadow-button-default) hover:text-white
+                               active:shadow-(--shadow-button-active) duration-300"
+                  >
                     Подробнее
-                  </button>
+                  </Link>
                 </div>
               </article>
             </li>

@@ -8,9 +8,9 @@ const ViewAllButton = ({btnText, href}: {btnText: string, href: string}) => {
                         </p>
                         <img src="/icons-header/shape.svg"
                              alt={btnText}
-                             width={24}
-                             height={24}
-                             sizes="24px"/>
+                             width={14}
+                             height={14}
+                             sizes="14px"/>
                     </Link>
     );
 }
