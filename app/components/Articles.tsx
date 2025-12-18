@@ -1,26 +1,13 @@
 import articlesDatabase from "@/migrations/articlesDatabase.json"
 import Image from "next/image";
 import Link from "next/link";
-import {Article} from "@/app/types/articles";
 import ViewAllButton from "@/app/components/ViewAllButton";
 
+
 const Articles = async () => {
-  let articles: Article[] = [];
-  let error = null;
+  const articles = articlesDatabase;
 
-  try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_SERVICE_URL!}/api/articles`
-    );
-    articles = await res.json();
-  } catch (err) {
-    error = "Ошибка получения статей";
-    console.error("Ошибка в компоненте Article:", err);
-  }
 
-  if (error) {
-    return <div className="text-red-500">Ошибка: {error}</div>;
-  }
 
   return (
     <section>
@@ -33,7 +20,7 @@ const Articles = async () => {
         {/* Список статей */}
         <ul className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-6">
           {articles.map((article) => (
-            <li key={article._id} className="h-75 md:h-105">
+            <li key={article.id} className="h-75 md:h-105">
               <article className="bg-white h-full flex flex-col rounded overflow-hidden shadow-(--shadow-card) hover:shadow-(--shadow-article) duration-300">
                 <div className="relative h-48 w-full">
                   <Image
@@ -58,7 +45,7 @@ const Articles = async () => {
 
 
                   <Link
-                    href={`/articles/${article.slug}`}
+                    href={`/articles/${article.id}`}
 
                     className="rounded mt-auto w-37.5 h-10 flex items-center justify-center
                                bg-[#E5FFDE] text-base text-[#70C05B]

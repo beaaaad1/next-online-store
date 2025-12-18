@@ -4,22 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b24b4eec-3bab-4659-87b1-480caad6aec8" name="Changes" comment="локальная бд">
+    <list default="true" id="b24b4eec-3bab-4659-87b1-480caad6aec8" name="Changes" comment="каталог и ссылки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/register/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/register/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/articles/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/articles/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/articles/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/articles/[slug]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/Articles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Articles.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/ViewAllButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ViewAllButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ProductCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/header/SearchBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/header/SearchBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/header/TopMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/header/TopMenu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/User.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/types/articles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/types/articles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/types/next-auth.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/types/next-auth.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/global.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/global.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mongodb.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mongodb.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/articlesDatabase.json" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/articlesDatabase.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,8 +73,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Emil\newWEB\next-online-store\app\articles" />
       <recent name="C:\Users\Emil\newWEB\next-online-store\app\articles\[slug]" />
+      <recent name="C:\Users\Emil\newWEB\next-online-store\app\articles" />
       <recent name="C:\Users\Emil\newWEB\next-online-store\app\auth" />
       <recent name="C:\Users\Emil\newWEB\next-online-store\app\api\auth\[...nextauth]" />
       <recent name="C:\Users\Emil\newWEB\next-online-store\app\(articles)" />
@@ -140,7 +135,8 @@
       <workItem from="1765765989470" duration="205000" />
       <workItem from="1765774983632" duration="5182000" />
       <workItem from="1765824692461" duration="8852000" />
-      <workItem from="1765901426198" duration="10315000" />
+      <workItem from="1765901426198" duration="10464000" />
+      <workItem from="1766044346794" duration="18630000" />
     </task>
     <task id="LOCAL-00001" summary="Слайдер">
       <option name="closed" value="true" />
@@ -230,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765736999690</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="каталог и ссылки">
+      <option name="closed" value="true" />
+      <created>1765925940130</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1765925940130</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,6 +262,7 @@
     <MESSAGE value="получение данных из бд" />
     <MESSAGE value="создание новых страниц" />
     <MESSAGE value="локальная бд" />
-    <option name="LAST_COMMIT_MESSAGE" value="локальная бд" />
+    <MESSAGE value="каталог и ссылки" />
+    <option name="LAST_COMMIT_MESSAGE" value="каталог и ссылки" />
   </component>
 </project>

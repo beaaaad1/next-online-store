@@ -5,6 +5,7 @@ import Footer from "@/app/components/Footer";
 import Header from "./components/header/Header";
 import { SessionProvider } from 'next-auth/react';
 import AuthProvider from "@/app/components/AuthProvider";
+import {CartProvider} from "@/app/context/CartContext";
 
 const rubik = Rubik({
 	variable: '--font-sans',
@@ -27,11 +28,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${rubik.variable} font-sans`}>
         <AuthProvider>
-          <Header/>
-            <main>
-                {children}
-            </main>
-            <Footer/>
+            <CartProvider>
+                <Header/>
+                    <main>
+                        {children}
+                    </main>
+                <Footer/>
+            </CartProvider>
         </AuthProvider>
       </body>
     </html>
