@@ -2,36 +2,40 @@ import { NextResponse } from 'next/server';
 import { getDB } from "@/api-routes";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import {ObjectId} from "mongodb";
 
+interface FavoriteItem {
+    id: number | string;
+    [key: string]: unknown;
+}
+
+interface FavoriteDocument {
+    _id?: ObjectId;
+    userId: string;
+    items: FavoriteItem[];
+    updatedAt: Date;
+}
 
 export async function GET() {
     const session = await getServerSession(authOptions);
-
-    if (!session || !session.user) {
-        return NextResponse.json({ items: [] });
-    }
+    if (!session?.user) return NextResponse.json({ items: [] });
 
     const db = await getDB();
-
-    const cart = await db.collection('carts').findOne({ userId: session.user.id });
-
-    return NextResponse.json(cart || { items: [] });
+    const favorites = await db.collection('favorites').findOne({ userId: session.user.id });
+    return NextResponse.json(favorites || { items: [] });
 }
 
 export async function POST(req: Request) {
     const session = await getServerSession(authOptions);
-
-    if (!session || !session.user) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
+    if (!session?.user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
     const { product } = await req.json();
     const db = await getDB();
 
-    await db.collection('carts').updateOne(
+    // Добавляем товар в массив, если его там нет
+    await db.collection('favorites').updateOne(
         { userId: session.user.id },
         {
-
             $addToSet: { items: product },
             $set: { updatedAt: new Date() }
         },
@@ -43,14 +47,18 @@ export async function POST(req: Request) {
 
 export async function DELETE(req: Request) {
     const session = await getServerSession(authOptions);
-    if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    if (!session?.user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
     const { productId } = await req.json();
     const db = await getDB();
 
-    await db.collection<never>('carts').updateOne(
+    await db.collection<FavoriteDocument>('favorites').updateOne(
         { userId: session.user.id },
-        { $pull: { items: { _id: productId } } } // Удаляем объект из массива по его _id
+        {
+            $pull: {
+                items: { id: productId }
+            }
+        }
     );
 
     return NextResponse.json({ success: true });

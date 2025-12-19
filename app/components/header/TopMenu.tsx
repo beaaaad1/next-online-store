@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useCart } from "@/app/context/CartContext";
 
 const TopMenu = () => {
-    // 1. Вся логика хуков должна быть ЗДЕСЬ (в начале функции)
     const { cartItems } = useCart();
 
     return (
@@ -19,6 +18,8 @@ const TopMenu = () => {
                 />
                 <span>Каталог</span>
             </li>
+            <Link href="/favorites">
+
 
             <li className="flex flex-col items-center gap-2.5 w-11 cursor-pointer">
                 <img
@@ -30,6 +31,7 @@ const TopMenu = () => {
                 />
                 <span>Избранное</span>
             </li>
+            </Link>
 
             <li className="flex flex-col items-center gap-2.5 w-11 cursor-pointer">
                 <img
@@ -58,7 +60,7 @@ const TopMenu = () => {
                         height={24}
                         className="object-contain w-6 h-6 group-hover:opacity-80 transition-opacity"
                     />
-                    <span className="text-[12px] text-[#414141]">Корзина</span>
+                    <span >Корзина</span>
                 </li>
             </Link>
         </ul>
