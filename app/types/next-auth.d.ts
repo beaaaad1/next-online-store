@@ -1,35 +1,23 @@
 import NextAuth, { DefaultSession, DefaultUser } from "next-auth";
-import { JWT } from "next-auth/jwt";
+import { JWT as NextAuthJWT } from "next-auth/jwt";
 
 declare module "next-auth" {
-    /**
-     * Возвращаемый объект при успешном authorize
-     */
     interface User extends DefaultUser {
         id: string;
-        name: string;
-        email: string;
+        role: string;
     }
 
-    /**
-     * Объект сессии
-     */
     interface Session extends DefaultSession {
         user: {
             id: string;
-            name: string;
-            email: string;
+            role: string;
         } & DefaultSession["user"];
     }
 }
 
 declare module "next-auth/jwt" {
-    /**
-     * Токен JWT
-     */
-    interface JWT {
+    interface JWT extends NextAuthJWT {
         id: string;
-        name: string;
-        email: string;
+        role: string;
     }
 }

@@ -4,16 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b24b4eec-3bab-4659-87b1-480caad6aec8" name="Changes" comment="добавление товаров в корзину + статьи">
+    <list default="true" id="b24b4eec-3bab-4659-87b1-480caad6aec8" name="Changes" comment="создание заказа">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/cart/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/cart/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/orders/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/orders/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/articles/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/articles/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/cart/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cart/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/header/TopMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/header/TopMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/context/CartContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/context/CartContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Order.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/orders/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/orders/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/types/next-auth.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/types/next-auth.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +144,7 @@
       <workItem from="1766121044491" duration="4469000" />
       <workItem from="1766146972336" duration="814000" />
       <workItem from="1766244281719" duration="2997000" />
-      <workItem from="1766346952496" duration="6343000" />
+      <workItem from="1766346952496" duration="13465000" />
     </task>
     <task id="LOCAL-00001" summary="Слайдер">
       <option name="closed" value="true" />
@@ -254,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766131065091</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="создание заказа">
+      <option name="closed" value="true" />
+      <created>1766353482190</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1766353482190</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,6 +296,7 @@
     <MESSAGE value="локальная бд" />
     <MESSAGE value="каталог и ссылки" />
     <MESSAGE value="добавление товаров в корзину + статьи" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавление товаров в корзину + статьи" />
+    <MESSAGE value="создание заказа" />
+    <option name="LAST_COMMIT_MESSAGE" value="создание заказа" />
   </component>
 </project>

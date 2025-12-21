@@ -6,6 +6,7 @@ import Header from "./components/header/Header";
 import { SessionProvider } from 'next-auth/react';
 import AuthProvider from "@/app/components/AuthProvider";
 import {CartProvider} from "@/app/context/CartContext";
+import { Toaster } from 'react-hot-toast';
 
 const rubik = Rubik({
 	variable: '--font-sans',
@@ -32,6 +33,7 @@ export default function RootLayout({
                 <Header/>
                     <main>
                         {children}
+                        <Toaster position="bottom-right" reverseOrder={false} />
                     </main>
                 <Footer/>
             </CartProvider>

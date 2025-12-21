@@ -3,12 +3,13 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useSession } from "next-auth/react";
 import { ProductCardProps } from '@/app/types/product';
+import toast from 'react-hot-toast';
 
 interface CartContextType {
     cartItems: ProductCardProps[];
     addToCart: (product: ProductCardProps) => Promise<void>;
     removeFromCart: (id: string | number) => Promise<void>;
-    clearCart: () => Promise<void>; // Добавили новый метод
+    clearCart: () => Promise<void>;
     loading: boolean;
 }
 
@@ -18,6 +19,8 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     const { data: session, status } = useSession();
     const [cartItems, setCartItems] = useState<ProductCardProps[]>([]);
     const [loading, setLoading] = useState(true);
+
+    const THEME_BLUE = "#125DF2";
 
     useEffect(() => {
         const fetchCart = async () => {
@@ -41,43 +44,69 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
     const addToCart = async (product: ProductCardProps) => {
         if (status !== "authenticated") {
-            alert("Пожалуйста, войдите в систему");
+            toast.error("Войдите в систему, чтобы добавить товар", {
+                style: {
+                    border: `2px solid ${THEME_BLUE}`,
+                    borderRadius: '12px',
+                    fontWeight: '600'
+                },
+            });
             return;
         }
 
         setCartItems(prev => [...prev, product]);
 
-        await fetch('/api/cart', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ product }),
-        });
+        try {
+            const res = await fetch('/api/cart', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ product }),
+            });
+
+            if (res.ok) {
+                toast.success(`${product.title || 'Товар'} добавлен в корзину`, {
+                    icon: '🛒',
+                    style: {
+                        border: `2px solid #70c05b`,
+                        borderRadius: '12px',
+                        fontWeight: '600'
+                    },
+                });
+            }
+        } catch (error) {
+            toast.error("Не удалось сохранить в корзине");
+            console.error(error);
+        }
     };
 
     const removeFromCart = async (productId: string | number) => {
+        const itemToRemove = cartItems.find(item => String(item._id) === String(productId));
+
         setCartItems(prev => prev.filter(item => String(item._id) !== String(productId)));
 
-        await fetch('/api/cart', {
-            method: 'DELETE',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ productId: String(productId) }),
-        });
-    };
-
-    // НОВАЯ ФУНКЦИЯ: Очистка корзины после заказа
-    const clearCart = async () => {
-        // 1. Очищаем локальное состояние
-        setCartItems([]);
-
-        // 2. Отправляем запрос на сервер для очистки коллекции в БД
-        // Мы используем метод DELETE, передавая специальный флаг или просто пустой запрос,
-        // если ваш API умеет удалять всё.
-        // Обычно проще всего реализовать DELETE без параметров как "удалить всё у этого пользователя"
         try {
             await fetch('/api/cart', {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ clearAll: true }), // Добавляем флаг очистки всего
+                body: JSON.stringify({ productId: String(productId) }),
+            });
+
+            toast("Товар удален из корзины", {
+                icon: '🗑️',
+                style: { borderRadius: '12px' }
+            });
+        } catch (error) {
+            console.error("Ошибка при удалении:", error);
+        }
+    };
+
+    const clearCart = async () => {
+        setCartItems([]);
+        try {
+            await fetch('/api/cart', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ clearAll: true }),
             });
         } catch (error) {
             console.error("Ошибка при очистке корзины:", error);

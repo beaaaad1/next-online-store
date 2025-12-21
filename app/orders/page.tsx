@@ -23,7 +23,6 @@ interface Order {
 export default function OrdersPage() {
     const [orders, setOrders] = useState<Order[]>([]);
     const [loading, setLoading] = useState(true);
-    // Состояние для хранения ID развернутых заказов
     const [expandedOrders, setExpandedOrders] = useState<string[]>([]);
 
     const BORDER_BLUE = "#125DF2";
@@ -112,7 +111,6 @@ export default function OrdersPage() {
                                     </div>
                                 </div>
 
-                                {/* КНОПКА РАЗВЕРТЫВАНИЯ */}
                                 <button
                                     onClick={() => toggleOrder(order._id)}
                                     className="w-full p-4 flex items-center justify-between bg-gray-50 border-t-2 hover:bg-gray-100 transition-colors"

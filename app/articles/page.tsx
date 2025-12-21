@@ -9,7 +9,6 @@ export default function AllArticlesPage() {
     <main className="bg-[#F9F9F9] min-h-screen py-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1208px]">
 
-        {/* Заголовок и хлебные крошки */}
         <div className="mb-8">
           <nav className="flex gap-2 text-sm text-[#8f8f8f] mb-4">
             <Link href="/" className="hover:text-[#70C05B]">Главная</Link>

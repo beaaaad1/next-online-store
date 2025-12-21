@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { formatPrice } from "@/app/utils/formatPrice";
 import Link from "next/link";
 
-// Типизация для заказов
 interface Order {
     _id: string;
     totalPrice: number;
@@ -28,7 +27,6 @@ export default function ProfilePage() {
             fetch('/api/orders')
                 .then(res => res.json())
                 .then(data => {
-                    // Берем последние 3-5 заказов для превью в профиле
                     setOrders(data);
                     setLoadingOrders(false);
                 })
@@ -47,7 +45,6 @@ export default function ProfilePage() {
 
     const user = session!.user!;
 
-    // Функция для цвета статуса
     const getStatusColor = (status: string) => {
         if (status === "В обработке") return "text-purple-600 bg-purple-50";
         if (status === "Доставлен") return "text-green-600 bg-green-50";
@@ -64,7 +61,7 @@ export default function ProfilePage() {
             </h1>
 
             <div className="flex flex-col md:flex-row gap-12">
-                {/* Левая колонка - Аватар */}
+
                 <div className="w-full md:w-1/4 flex flex-col items-center">
                     <img
                         src="/images/avatar.jpg"
@@ -83,7 +80,6 @@ export default function ProfilePage() {
                     </button>
                 </div>
 
-                {/* Правая колонка - Данные и Заказы */}
                 <div className="w-full md:w-3/4">
                     <h2 className="text-2xl font-semibold mb-4">Мои данные</h2>
                     <div className="bg-white p-6 rounded-xl shadow-md border-2" style={{ borderColor: BORDER_BLUE }}>
