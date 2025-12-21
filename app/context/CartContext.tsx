@@ -8,6 +8,7 @@ interface CartContextType {
     cartItems: ProductCardProps[];
     addToCart: (product: ProductCardProps) => Promise<void>;
     removeFromCart: (id: string | number) => Promise<void>;
+    clearCart: () => Promise<void>; // Добавили новый метод
     loading: boolean;
 }
 
@@ -21,9 +22,15 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     useEffect(() => {
         const fetchCart = async () => {
             if (status === "authenticated") {
-                const res = await fetch('/api/cart');
-                const data = await res.json();
-                setCartItems(data.items || []);
+                try {
+                    const res = await fetch('/api/cart');
+                    if (res.ok) {
+                        const data = await res.json();
+                        setCartItems(data.items || []);
+                    }
+                } catch (error) {
+                    console.error("Ошибка при загрузке корзины:", error);
+                }
             } else {
                 setCartItems([]);
             }
@@ -48,18 +55,37 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     const removeFromCart = async (productId: string | number) => {
+        setCartItems(prev => prev.filter(item => String(item._id) !== String(productId)));
 
-    setCartItems(prev => prev.filter(item => String(item._id) !== String(productId)));
+        await fetch('/api/cart', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ productId: String(productId) }),
+        });
+    };
 
-    await fetch('/api/cart', {
-        method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productId: String(productId) }),
-    });
-};;
+    // НОВАЯ ФУНКЦИЯ: Очистка корзины после заказа
+    const clearCart = async () => {
+        // 1. Очищаем локальное состояние
+        setCartItems([]);
+
+        // 2. Отправляем запрос на сервер для очистки коллекции в БД
+        // Мы используем метод DELETE, передавая специальный флаг или просто пустой запрос,
+        // если ваш API умеет удалять всё.
+        // Обычно проще всего реализовать DELETE без параметров как "удалить всё у этого пользователя"
+        try {
+            await fetch('/api/cart', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ clearAll: true }), // Добавляем флаг очистки всего
+            });
+        } catch (error) {
+            console.error("Ошибка при очистке корзины:", error);
+        }
+    };
 
     return (
-        <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, loading }}>
+        <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart, loading }}>
             {children}
         </CartContext.Provider>
     );

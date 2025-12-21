@@ -32,17 +32,18 @@ const TopMenu = () => {
                 <span>Избранное</span>
             </li>
             </Link>
-
-            <li className="flex flex-col items-center gap-2.5 w-11 cursor-pointer">
-                <img
-                    src="/icons-header/deliver.svg"
-                    alt="Заказы"
-                    width={24}
-                    height={24}
-                    className="object-contain w-6 h-6"
-                />
-                <span>Заказы</span>
-            </li>
+            <Link href="/orders">
+                <li className="flex flex-col items-center gap-2.5 w-11 cursor-pointer">
+                    <img
+                        src="/icons-header/deliver.svg"
+                        alt="Заказы"
+                        width={24}
+                        height={24}
+                        className="object-contain w-6 h-6"
+                    />
+                    <span>Заказы</span>
+                </li>
+            </Link>
 
             <Link href="/cart">
                 <li className="relative flex flex-col items-center gap-2.5 w-11 cursor-pointer group">
