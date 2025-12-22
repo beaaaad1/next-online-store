@@ -3,8 +3,6 @@ import { getDB } from "@/api-routes";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
-// app/api/orders/route.ts
-
 export async function POST(req: Request) {
     const session = await getServerSession(authOptions);
     if (!session?.user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -17,8 +15,8 @@ export async function POST(req: Request) {
             userId: session.user.id,
             items,
             totalPrice,
-            deliveryPoint: customerData.deliveryPoint, // Убедитесь, что это поле сохраняется
-            status: "В обработке", // ИСПРАВЛЕНО: статус по умолчанию
+            deliveryPoint: customerData.deliveryPoint,
+            status: "В обработке",
             createdAt: new Date(),
         };
 

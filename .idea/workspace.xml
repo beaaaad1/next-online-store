@@ -5,19 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b24b4eec-3bab-4659-87b1-480caad6aec8" name="Changes" comment="создание заказа">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_revert_[Changes]2/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_revert__Changes_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/articles/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/articles/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/cart/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cart/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/context/CartContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/context/CartContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Order.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/orders/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/orders/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/types/next-auth.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/types/next-auth.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/admin/orders/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/admin/orders/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/orders/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/orders/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/NewProducts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/NewProducts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Product.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/purchases/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/purchases/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +140,8 @@
       <workItem from="1766121044491" duration="4469000" />
       <workItem from="1766146972336" duration="814000" />
       <workItem from="1766244281719" duration="2997000" />
-      <workItem from="1766346952496" duration="13465000" />
+      <workItem from="1766346952496" duration="13688000" />
+      <workItem from="1766407408487" duration="11337000" />
     </task>
     <task id="LOCAL-00001" summary="Слайдер">
       <option name="closed" value="true" />
@@ -266,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766353482190</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="создание заказа">
+      <option name="closed" value="true" />
+      <created>1766361303359</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1766361303359</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
