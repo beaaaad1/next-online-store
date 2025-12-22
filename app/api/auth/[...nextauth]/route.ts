@@ -5,6 +5,7 @@ import User from "@/app/models/User";
 import bcrypt from "bcryptjs";
 import { NextAuthOptions } from "next-auth";
 
+
 export const authOptions: NextAuthOptions = {
     providers: [
         CredentialsProvider({
@@ -41,7 +42,7 @@ export const authOptions: NextAuthOptions = {
                     id: userFromDb._id.toString(),
                     name: userFromDb.name,
                     email: userFromDb.email,
-                    role: "user", // Обычный пользователь из базы
+                    role: "user",
                 };
             }
         })

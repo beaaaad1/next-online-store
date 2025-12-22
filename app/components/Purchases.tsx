@@ -1,4 +1,3 @@
-
 import ProductCard from "./ProductCard";
 import {ProductCardProps} from "@/app/types/product";
 import ViewAllButton from "@/app/components/ViewAllButton";

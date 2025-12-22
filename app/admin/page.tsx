@@ -36,14 +36,17 @@ const STATUSES = ["В обработке", "Подтвержден", "В пут�
 
 export default function AdminPage() {
     const { data: session, status } = useSession();
-    const [activeTab, setActiveTab] = useState<"orders" | "products">("orders");
+    const [activeTab, setActiveTab] = useState<"orders" | "products" | "messages">("orders");
 
-    // Состояния данных
     const [orders, setOrders] = useState<IOrder[]>([]);
     const [products, setProducts] = useState<IProduct[]>([]);
     const [loading, setLoading] = useState(true);
 
-    // Состояние формы
+    const [chats, setChats] = useState<any[]>([]);
+    const [selectedUser, setSelectedUser] = useState<string | null>(null);
+    const [currentChat, setCurrentChat] = useState<any[]>([]);
+    const [adminMsg, setAdminMsg] = useState("");
+
     const [newProduct, setNewProduct] = useState({
         description: "",
         brand: "",
@@ -82,11 +85,44 @@ export default function AdminPage() {
         setProducts(Array.isArray(data) ? data : []);
     };
 
+    const fetchChats = async () => {
+        const res = await fetch("/api/messages");
+        const data = await res.json();
+        setChats(Array.isArray(data) ? data : []);
+    };
+
+    const fetchUserChat = async (userId: string) => {
+        const res = await fetch(`/api/messages?userId=${userId}`);
+        const data = await res.json();
+        setCurrentChat(Array.isArray(data) ? data : []);
+    };
+
+    const handleAdminSend = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!adminMsg.trim() || !selectedUser) return;
+
+        const res = await fetch("/api/messages", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ userId: selectedUser, text: adminMsg })
+        });
+
+        if (res.ok) {
+            setAdminMsg("");
+            fetchUserChat(selectedUser);
+            toast.success("Ответ отправлен");
+        }
+    };
+
     useEffect(() => {
         if ((session?.user as any)?.role === "admin") {
-            Promise.all([fetchOrders(), fetchProducts()]).then(() => setLoading(false));
+            Promise.all([fetchOrders(), fetchProducts(), fetchChats()]).then(() => setLoading(false));
         }
     }, [session]);
+
+    useEffect(() => {
+        if (activeTab === "messages") fetchChats();
+    }, [activeTab]);
 
     const handleAddProduct = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -160,6 +196,7 @@ export default function AdminPage() {
             <div className="flex gap-2 mb-10 bg-slate-100 p-1.5 rounded-2xl w-fit border border-slate-200">
                 <button onClick={() => setActiveTab("orders")} className={`px-8 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeTab === "orders" ? "bg-white shadow-md text-slate-800" : "text-slate-400 hover:text-slate-600"}`}>Заказы ({orders.length})</button>
                 <button onClick={() => setActiveTab("products")} className={`px-8 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeTab === "products" ? "bg-white shadow-md text-slate-800" : "text-slate-400 hover:text-slate-600"}`}>Товары ({products.length})</button>
+                <button onClick={() => setActiveTab("messages")} className={`px-8 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeTab === "messages" ? "bg-white shadow-md text-slate-800" : "text-slate-400 hover:text-slate-600"}`}>Сообщения ({chats.length})</button>
             </div>
 
             {activeTab === "products" && (
@@ -189,7 +226,6 @@ export default function AdminPage() {
                                             </button>
                                         )}
                                     </div>
-                                    <p className="mt-4 text-[9px] text-slate-400 leading-relaxed text-center font-bold uppercase">PNG, JPG или WEBP. До 2 MB.</p>
                                 </div>
 
                                 <div className="md:w-3/5 p-8 lg:p-10 space-y-6">
@@ -353,6 +389,72 @@ export default function AdminPage() {
                             </div>
                         ))
                     )}
+                </div>
+            )}
+
+            {activeTab === "messages" && (
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-[70vh] animate-in fade-in duration-500">
+                    <div className="lg:col-span-4 bg-white rounded-[32px] border-2 border-slate-800 overflow-hidden flex flex-col shadow-[6px_6px_0px_0px_rgba(30,41,59,1)]">
+                        <div className="p-6 border-b-2 border-slate-800 bg-slate-50">
+                            <h3 className="font-black uppercase italic text-sm">Все диалоги</h3>
+                        </div>
+                        <div className="flex-1 overflow-y-auto custom-scrollbar">
+                            {chats.map((chat) => (
+                                <button
+                                    key={chat._id}
+                                    onClick={() => { setSelectedUser(chat._id); fetchUserChat(chat._id); }}
+                                    className={`w-full p-6 text-left border-b border-slate-100 transition-all hover:bg-slate-50 ${selectedUser === chat._id ? 'bg-blue-50 border-r-4 border-r-blue-600' : ''}`}
+                                >
+                                    <p className="font-black text-[10px] text-blue-600 truncate mb-1 uppercase tracking-tighter">{chat._id}</p>
+                                    <p className="text-xs font-bold text-slate-800 truncate">{chat.lastMessage}</p>
+                                    <p className="text-[8px] font-black text-slate-300 uppercase mt-2">
+                                        {new Date(chat.lastDate).toLocaleString()}
+                                    </p>
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="lg:col-span-8 bg-white rounded-[40px] border-2 border-slate-800 shadow-[10px_10px_0px_0px_rgba(30,41,59,1)] overflow-hidden flex flex-col">
+                        {selectedUser ? (
+                            <>
+                                <div className="p-6 border-b-2 border-slate-800 flex justify-between items-center bg-white shadow-sm">
+                                    <p className="font-black text-xs uppercase italic tracking-tighter text-blue-600">{selectedUser}</p>
+                                    <button onClick={() => fetchUserChat(selectedUser)} className="bg-slate-100 p-2 px-4 rounded-xl text-slate-800 font-black text-[9px] uppercase hover:bg-slate-800 hover:text-white transition-all">
+                                        Обновить
+                                    </button>
+                                </div>
+                                <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-slate-50 custom-scrollbar">
+                                    {currentChat.map((msg, i) => (
+                                        <div key={i} className={`flex ${msg.isAdmin ? 'justify-end' : 'justify-start'}`}>
+                                            <div className={`max-w-[75%] p-4 rounded-3xl shadow-sm ${msg.isAdmin ? 'bg-slate-800 text-white rounded-tr-none' : 'bg-white border-2 border-slate-100 text-slate-800 rounded-tl-none'}`}>
+                                                <p className="text-sm font-bold leading-relaxed">{msg.text}</p>
+                                                <p className="text-[8px] mt-2 opacity-50 font-black uppercase">
+                                                    {new Date(msg.createdAt).toLocaleTimeString()}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                                <form onSubmit={handleAdminSend} className="p-6 bg-white border-t-2 border-slate-800 flex gap-4">
+                                    <input
+                                        type="text"
+                                        value={adminMsg}
+                                        onChange={(e) => setAdminMsg(e.target.value)}
+                                        placeholder="Введите ответ..."
+                                        className="flex-1 p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-slate-800 outline-none font-bold transition-all"
+                                    />
+                                    <button className="bg-slate-800 text-white px-8 rounded-2xl font-black uppercase text-xs hover:bg-slate-700 active:scale-95 transition-all">
+                                        Отправить
+                                    </button>
+                                </form>
+                            </>
+                        ) : (
+                            <div className="flex-1 flex items-center justify-center text-slate-300 font-black uppercase tracking-widest italic">
+                                Выберите диалог
+                            </div>
+                        )}
+                    </div>
                 </div>
             )}
         </div>

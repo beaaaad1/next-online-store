@@ -91,7 +91,6 @@ export default function OrdersPage() {
                                     </div>
                                 </div>
 
-                                {/* Список товаров */}
                                 <div className="p-6 space-y-4">
                                     {order.items.map((item, idx) => (
                                         <div key={idx} className="flex justify-between items-center">
@@ -126,7 +125,6 @@ export default function OrdersPage() {
                                     </svg>
                                 </button>
 
-                                {/* СКРЫТЫЙ БЛОК С КАРТОЙ */}
                                 <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}>
                                     <div className="p-6 bg-white space-y-6">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -7,7 +7,6 @@ import Order from "@/app/models/Order";
 export async function GET() {
     const session = await getServerSession(authOptions);
 
-    // Проверка на админа
     if (!session || (session.user as any).role !== "admin") {
         return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
