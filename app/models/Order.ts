@@ -8,7 +8,6 @@ interface OrderItem {
 
 }
 
-// Интерфейс для документа заказа
 export interface IOrder extends Document {
     userId: Types.ObjectId; // Ссылка на пользователя
     items: OrderItem[];     // Список товаров в заказе

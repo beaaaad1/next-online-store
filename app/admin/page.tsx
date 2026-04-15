@@ -5,7 +5,6 @@ import { useSession } from "next-auth/react";
 import { formatPrice } from "@/app/utils/formatPrice";
 import toast from "react-hot-toast";
 
-// Интерфейсы для типизации
 interface IProduct {
     _id: string;
     description: string;
@@ -196,9 +195,16 @@ export default function AdminPage() {
             <div className="flex gap-2 mb-10 bg-slate-100 p-1.5 rounded-2xl w-fit border border-slate-200">
                 <button onClick={() => setActiveTab("orders")} className={`px-8 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeTab === "orders" ? "bg-white shadow-md text-slate-800" : "text-slate-400 hover:text-slate-600"}`}>Заказы ({orders.length})</button>
                 <button onClick={() => setActiveTab("products")} className={`px-8 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeTab === "products" ? "bg-white shadow-md text-slate-800" : "text-slate-400 hover:text-slate-600"}`}>Товары ({products.length})</button>
-                <button onClick={() => setActiveTab("messages")} className={`px-8 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeTab === "messages" ? "bg-white shadow-md text-slate-800" : "text-slate-400 hover:text-slate-600"}`}>Сообщения ({chats.length})</button>
+                <button onClick={() => setActiveTab("messages")} className={`px-8 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeTab === "messages" ? "bg-white shadow-md text-slate-800" : "text-slate-400 hover:text-slate-600"}`}>
+                    Сообщения ({chats.length})
+                    {/* Индикатор если есть диалоги ожидающие оператора */}
+                    {chats.some(c => c.needsOperator) && (
+                        <span className="ml-2 inline-block w-2 h-2 bg-red-500 rounded-full animate-pulse"/>
+                    )}
+                </button>
             </div>
 
+            {/* ТОВАРЫ — без изменений */}
             {activeTab === "products" && (
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 animate-in fade-in duration-500">
                     <div className="lg:col-span-3">
@@ -265,11 +271,7 @@ export default function AdminPage() {
                                         {newProduct.isSale ? (
                                             <div className="space-y-1 animate-in slide-in-from-left-2">
                                                 <label className="text-[9px] font-black text-red-500 uppercase ml-1">Размер скидки (%)</label>
-                                                <select
-                                                    className="w-full p-3.5 bg-red-50 rounded-2xl border-2 border-red-100 focus:border-red-500 outline-none font-black text-red-500 appearance-none"
-                                                    value={newProduct.discountPercent}
-                                                    onChange={e => setNewProduct({...newProduct, discountPercent: e.target.value})}
-                                                >
+                                                <select className="w-full p-3.5 bg-red-50 rounded-2xl border-2 border-red-100 focus:border-red-500 outline-none font-black text-red-500 appearance-none" value={newProduct.discountPercent} onChange={e => setNewProduct({...newProduct, discountPercent: e.target.value})}>
                                                     {[5, 10, 15, 20, 25, 30, 40, 50, 70].map(val => (
                                                         <option key={val} value={val}>{val}% скидка</option>
                                                     ))}
@@ -325,6 +327,7 @@ export default function AdminPage() {
                 </div>
             )}
 
+            {/* ЗАКАЗЫ — без изменений */}
             {activeTab === "orders" && (
                 <div className="space-y-8 animate-in fade-in duration-500">
                     {orders.length === 0 ? (
@@ -374,11 +377,7 @@ export default function AdminPage() {
                                             <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Изменить статус</p>
                                             <div className="flex flex-wrap gap-2">
                                                 {STATUSES.map(s => (
-                                                    <button
-                                                        key={s}
-                                                        onClick={() => handleStatusChange(order._id, s)}
-                                                        className={`px-4 py-2.5 rounded-xl text-[10px] font-black uppercase transition-all border-2 ${order.status === s ? "bg-slate-800 text-white border-slate-800 shadow-lg scale-105" : "bg-white text-slate-400 border-slate-100 hover:border-slate-800 hover:text-slate-800"}`}
-                                                    >
+                                                    <button key={s} onClick={() => handleStatusChange(order._id, s)} className={`px-4 py-2.5 rounded-xl text-[10px] font-black uppercase transition-all border-2 ${order.status === s ? "bg-slate-800 text-white border-slate-800 shadow-lg scale-105" : "bg-white text-slate-400 border-slate-100 hover:border-slate-800 hover:text-slate-800"}`}>
                                                         {s}
                                                     </button>
                                                 ))}
@@ -392,6 +391,7 @@ export default function AdminPage() {
                 </div>
             )}
 
+            {/* СООБЩЕНИЯ — обновлено */}
             {activeTab === "messages" && (
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-[70vh] animate-in fade-in duration-500">
                     <div className="lg:col-span-4 bg-white rounded-[32px] border-2 border-slate-800 overflow-hidden flex flex-col shadow-[6px_6px_0px_0px_rgba(30,41,59,1)]">
@@ -405,7 +405,15 @@ export default function AdminPage() {
                                     onClick={() => { setSelectedUser(chat._id); fetchUserChat(chat._id); }}
                                     className={`w-full p-6 text-left border-b border-slate-100 transition-all hover:bg-slate-50 ${selectedUser === chat._id ? 'bg-blue-50 border-r-4 border-r-blue-600' : ''}`}
                                 >
-                                    <p className="font-black text-[10px] text-blue-600 truncate mb-1 uppercase tracking-tighter">{chat._id}</p>
+                                    <div className="flex items-center justify-between mb-1">
+                                        <p className="font-black text-[10px] text-blue-600 truncate uppercase tracking-tighter">{chat._id}</p>
+                                        {/* Пометка "Ждёт оператора" */}
+                                        {chat.needsOperator && (
+                                            <span className="flex-shrink-0 ml-2 text-[8px] font-black uppercase bg-red-500 text-white px-2 py-0.5 rounded-full animate-pulse">
+                                                Ждёт оператора
+                                            </span>
+                                        )}
+                                    </div>
                                     <p className="text-xs font-bold text-slate-800 truncate">{chat.lastMessage}</p>
                                     <p className="text-[8px] font-black text-slate-300 uppercase mt-2">
                                         {new Date(chat.lastDate).toLocaleString()}
@@ -419,7 +427,12 @@ export default function AdminPage() {
                         {selectedUser ? (
                             <>
                                 <div className="p-6 border-b-2 border-slate-800 flex justify-between items-center bg-white shadow-sm">
-                                    <p className="font-black text-xs uppercase italic tracking-tighter text-blue-600">{selectedUser}</p>
+                                    <div>
+                                        <p className="font-black text-xs uppercase italic tracking-tighter text-blue-600">{selectedUser}</p>
+                                        {chats.find(c => c._id === selectedUser)?.needsOperator && (
+                                            <p className="text-[9px] font-black text-red-500 uppercase tracking-widest mt-0.5">Ожидает живого оператора</p>
+                                        )}
+                                    </div>
                                     <button onClick={() => fetchUserChat(selectedUser)} className="bg-slate-100 p-2 px-4 rounded-xl text-slate-800 font-black text-[9px] uppercase hover:bg-slate-800 hover:text-white transition-all">
                                         Обновить
                                     </button>
@@ -427,10 +440,19 @@ export default function AdminPage() {
                                 <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-slate-50 custom-scrollbar">
                                     {currentChat.map((msg, i) => (
                                         <div key={i} className={`flex ${msg.isAdmin ? 'justify-end' : 'justify-start'}`}>
-                                            <div className={`max-w-[75%] p-4 rounded-3xl shadow-sm ${msg.isAdmin ? 'bg-slate-800 text-white rounded-tr-none' : 'bg-white border-2 border-slate-100 text-slate-800 rounded-tl-none'}`}>
+                                            <div className={`max-w-[75%] p-4 rounded-3xl shadow-sm ${
+                                                msg.isAdmin
+                                                    ? msg.isBot
+                                                        ? 'bg-purple-600 text-white rounded-tr-none'
+                                                        : 'bg-slate-800 text-white rounded-tr-none'
+                                                    : 'bg-white border-2 border-slate-100 text-slate-800 rounded-tl-none'
+                                            }`}>
                                                 <p className="text-sm font-bold leading-relaxed">{msg.text}</p>
                                                 <p className="text-[8px] mt-2 opacity-50 font-black uppercase">
-                                                    {new Date(msg.createdAt).toLocaleTimeString()}
+                                                    {msg.isAdmin
+                                                        ? msg.isBot ? 'ИИ-ассистент' : 'Оператор'
+                                                        : 'Покупатель'
+                                                    } • {new Date(msg.createdAt).toLocaleTimeString()}
                                                 </p>
                                             </div>
                                         </div>

@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b24b4eec-3bab-4659-87b1-480caad6aec8" name="Changes" comment="страница админа, создание нового продукта">
+    <list default="true" id="b24b4eec-3bab-4659-87b1-480caad6aec8" name="Changes" comment="обратная связь для юзера и админа">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/admin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/admin/orders/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/admin/orders/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Purchases.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Purchases.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/contacts/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/contacts/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Product.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/orders/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/orders/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/messages/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/messages/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/ContactForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ContactForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Order.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +49,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.route.ts.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -73,15 +70,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Emil\newWEB\next-online-store\public\icons-header" />
+      <recent name="C:\Users\Emil\newWEB\next-online-store" />
       <recent name="C:\Users\Emil\newWEB\next-online-store\app\api" />
       <recent name="C:\Users\Emil\newWEB\next-online-store\app\api\admin" />
       <recent name="C:\Users\Emil\newWEB\next-online-store\app\articles\[slug]" />
-      <recent name="C:\Users\Emil\newWEB\next-online-store\app\articles" />
-      <recent name="C:\Users\Emil\newWEB\next-online-store\app\auth" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Next.js: server-side">
+  <component name="RunManager" selected="Node.js.route.ts">
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="route.ts" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app/api/ai-chat/route.ts" typescript-loader="bundled" working-dir="$PROJECT_DIR$/app/api/ai-chat">
       <method v="2" />
     </configuration>
     <configuration name="Next.js: server-side" type="js.build_tools.npm">
@@ -94,6 +94,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.route.ts" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -141,7 +146,34 @@
       <workItem from="1766146972336" duration="814000" />
       <workItem from="1766244281719" duration="2997000" />
       <workItem from="1766346952496" duration="13688000" />
-      <workItem from="1766407408487" duration="17458000" />
+      <workItem from="1766407408487" duration="17669000" />
+      <workItem from="1766482120143" duration="885000" />
+      <workItem from="1766495306504" duration="1604000" />
+      <workItem from="1766503668930" duration="2687000" />
+      <workItem from="1766531348674" duration="1082000" />
+      <workItem from="1766533149468" duration="26000" />
+      <workItem from="1766560107709" duration="3828000" />
+      <workItem from="1766951839941" duration="88000" />
+      <workItem from="1770465162080" duration="71000" />
+      <workItem from="1773728500798" duration="4665000" />
+      <workItem from="1774187683155" duration="629000" />
+      <workItem from="1774275332732" duration="1723000" />
+      <workItem from="1774531637071" duration="2835000" />
+      <workItem from="1774551821753" duration="2723000" />
+      <workItem from="1774558729144" duration="2184000" />
+      <workItem from="1774610429377" duration="9739000" />
+      <workItem from="1774897174236" duration="2223000" />
+      <workItem from="1775215015246" duration="3252000" />
+      <workItem from="1775746325064" duration="5733000" />
+      <workItem from="1775809692888" duration="336000" />
+      <workItem from="1775813439738" duration="289000" />
+      <workItem from="1775814448893" duration="857000" />
+      <workItem from="1775930566620" duration="1579000" />
+      <workItem from="1776008027592" duration="1183000" />
+      <workItem from="1776026717077" duration="97000" />
+      <workItem from="1776026846670" duration="14000" />
+      <workItem from="1776026931367" duration="76000" />
+      <workItem from="1776080973910" duration="560000" />
     </task>
     <task id="LOCAL-00001" summary="Слайдер">
       <option name="closed" value="true" />
@@ -279,7 +311,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766434096523</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="обратная связь для юзера и админа">
+      <option name="closed" value="true" />
+      <created>1766440204547</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1766440204547</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,6 +351,7 @@
     <MESSAGE value="добавление товаров в корзину + статьи" />
     <MESSAGE value="создание заказа" />
     <MESSAGE value="страница админа, создание нового продукта" />
-    <option name="LAST_COMMIT_MESSAGE" value="страница админа, создание нового продукта" />
+    <MESSAGE value="обратная связь для юзера и админа" />
+    <option name="LAST_COMMIT_MESSAGE" value="обратная связь для юзера и админа" />
   </component>
 </project>
